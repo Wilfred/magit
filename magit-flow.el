@@ -78,6 +78,12 @@
                                                'magit-wash-diffs
                                                "flow" "feature" "diff")))))))
 
+(defun magit-flow-release-create ()
+  "Prepare a new release using flow"
+  (interactive)
+  (let ((name (read-string "Release version: ")))
+    (magit-run-git-flow "release" "start" name)))
+
 (defvar magit-flow-mode-map
   (let ((map (make-sparse-keymap)))
     (define-key map (kbd "o") 'magit-key-mode-popup-flow)
