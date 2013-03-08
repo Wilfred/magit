@@ -32,6 +32,9 @@
 (defun magit-run-git-lines-flow (&rest args)
   (apply 'magit-git-lines (cons "flow" args)))
 
+(defun magit-run-git-string-flow (&rest args)
+  (apply 'magit-git-string (cons "flow" args)))
+
 (defun magit-flow-init ()
   (interactive)
   (magit-run-git-flow "init" "-d")
